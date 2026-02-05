@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS faq_items;
+DROP TABLE IF EXISTS tos_documents;
+DROP TABLE IF EXISTS tasks;
+DROP TABLE IF EXISTS users;
