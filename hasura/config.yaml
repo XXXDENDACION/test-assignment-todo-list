@@ -1,5 +1,5 @@
 version: 3
-endpoint: $(HASURA_GRAPHQL_ENDPOINT)
-admin_secret: $(HASURA_ADMIN_SECRET)
+endpoint: ${HASURA_GRAPHQL_ENDPOINT}
+admin_secret: ${HASURA_GRAPHQL_ADMIN_SECRET}
 migrations_directory: migrations
 seeds_directory: seeds

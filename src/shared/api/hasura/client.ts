@@ -2,22 +2,22 @@ import { GraphQLClient } from 'graphql-request';
 import jwt from 'jsonwebtoken';
 
 const HASURA_ENDPOINT =
-  process.env.HASURA_GRAPHQL_ENDPOINT || 'http://localhost:8080/v1/graphql';
+  `${process.env.HASURA_GRAPHQL_ENDPOINT}/v1/graphql` || 'http://localhost:8080/v1/graphql';
 
-if (!process.env.HASURA_ADMIN_SECRET) {
-  throw new Error('HASURA_ADMIN_SECRET env variable is required');
+if (!process.env.HASURA_GRAPHQL_ADMIN_SECRET) {
+  throw new Error('HASURA_GRAPHQL_ADMIN_SECRET env variable is required');
 }
 if (!process.env.HASURA_JWT_SECRET) {
   throw new Error('HASURA_JWT_SECRET env variable is required');
 }
 
-const HASURA_ADMIN_SECRET = process.env.HASURA_ADMIN_SECRET;
+const HASURA_GRAPHQL_ADMIN_SECRET = process.env.HASURA_GRAPHQL_ADMIN_SECRET;
 const HASURA_JWT_SECRET = process.env.HASURA_JWT_SECRET;
 
 // Admin client for server-side operations (user lookup, etc.)
 export const hasuraAdminClient = new GraphQLClient(HASURA_ENDPOINT, {
   headers: {
-    'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+    'x-hasura-admin-secret': HASURA_GRAPHQL_ADMIN_SECRET,
   },
 });
 

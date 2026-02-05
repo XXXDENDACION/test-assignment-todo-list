@@ -11,9 +11,9 @@ npm install                                     # install dependencies
 cp .env.example .env.local                            # create env config
 docker-compose --env-file .env.local up                    # start PostgreSQL & Hasura
 cd hasura
-hasura migrate apply --database-name default    # apply migrations
-hasura metadata apply                           # apply permissions
-hasura seed apply --database-name default       # load demo data
+hasura migrate apply --database-name default --envfile ../.env.local    # apply migrations
+hasura metadata apply --envfile ../.env.local                          # apply permissions
+hasura seed apply --database-name default --envfile ../.env.local       # load demo data
 cd ..
 npm run dev                                     # start dev server
 ```
@@ -30,7 +30,7 @@ Open http://localhost:3000
 |---|---|
 | `POSTGRES_PASSWORD` | PostgreSQL password |
 | `POSTGRES_DB` | PostgreSQL database name |
-| `HASURA_ADMIN_SECRET` | Hasura admin secret |
+| `HASURA_GRAPHQL_ADMIN_SECRET` | Hasura admin secret |
 | `HASURA_JWT_SECRET` | JWT signing key (min 32 chars) |
 | `HASURA_GRAPHQL_ENDPOINT` | Hasura GraphQL endpoint |
 | `NEXTAUTH_SECRET` | NextAuth session secret (min 32 chars) |
