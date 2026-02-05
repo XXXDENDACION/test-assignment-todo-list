@@ -20,7 +20,9 @@ npm run dev                                     # start dev server
 
 Open http://localhost:3000
 
-**Demo credentials:** `demo@example.com` / `password123`
+**Demo credentials:** 
+1. `demo@example.com` / `password123`
+2. `test@example.com / test1234`
 
 ## Environment Variables
 
