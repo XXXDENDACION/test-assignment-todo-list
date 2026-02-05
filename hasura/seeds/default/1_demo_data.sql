@@ -5,7 +5,7 @@ INSERT INTO users (id, email, name, password_hash) VALUES
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO users (id, email, name, password_hash) VALUES
-    ('c1f7a4e9-1c9c-4f1a-b3e3-7b1a2c3d4e5f', 'test@example.com', 'Test User', '$2b$12$7kP.2.w3.X4y.Z5a.B6c.D7e.F8g.H9i.J0k.L1m.N2o.P3q.R4s')
+    ('c1f7a4e9-1c9c-4f1a-b3e3-7b1a2c3d4e5f', 'test@example.com', 'Test User', '$2b$16$R9lSfwREAmj9XdosBW5uAOpgeKo0dPlDS9ZNIzIf5bpJ6YyjdOJlO')
 ON CONFLICT (id) DO NOTHING;
 
 -- Terms of Service document
