@@ -1,6 +1,6 @@
 version: 3
 endpoint: http://localhost:8080
-admin_secret: myadminsecret
-metadata_directory: metadata
+endpoint: $(HASURA_GRAPHQL_ENDPOINT)
+admin_secret: $(HASURA_ADMIN_SECRET)
 migrations_directory: migrations
 seeds_directory: seeds
