@@ -8,7 +8,7 @@ A full-stack task management application built with Next.js, Hasura, tRPC, and N
 
 ```bash
 npm install                                     # install dependencies
-cp .env.example .env                            # create env config
+cp .env.example .env.local                            # create env config
 docker-compose --env-file .env.local up                    # start PostgreSQL & Hasura
 cd hasura
 hasura migrate apply --database-name default    # apply migrations
@@ -24,8 +24,6 @@ Open http://localhost:3000
 
 ## Environment Variables
 
-Copy `.env.example` to `.env` and adjust values:
-
 | Variable | Description |
 |---|---|
 | `POSTGRES_PASSWORD` | PostgreSQL password |
@@ -36,7 +34,7 @@ Copy `.env.example` to `.env` and adjust values:
 | `NEXTAUTH_SECRET` | NextAuth session secret (min 32 chars) |
 | `NEXTAUTH_URL` | NextAuth base URL |
 
-Both `docker-compose.yml` and Next.js read from the same `.env` file.
+Both `docker-compose.yml` and Next.js read from the same `.env.local` file.
 
 ## Tech Stack
 
